@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E8E8A052807242D0036F176 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E8A042807242D0036F176 /* PageViewController.swift */; };
+		2E8E8A072807249C0036F176 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E8A062807249C0036F176 /* JournalViewController.swift */; };
 		2ED0A85428046AD000839122 /* HoroscopeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED0A85328046AD000839122 /* HoroscopeUser.swift */; };
 		2ED0A85628046AE200839122 /* HoroscopeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED0A85528046AE200839122 /* HoroscopeDetail.swift */; };
 		2ED0A858280471D500839122 /* HoroscopeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED0A857280471D500839122 /* HoroscopeDetailViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E8E8A042807242D0036F176 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		2E8E8A062807249C0036F176 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
 		2ED0A85328046AD000839122 /* HoroscopeUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeUser.swift; sourceTree = "<group>"; };
 		2ED0A85528046AE200839122 /* HoroscopeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeDetail.swift; sourceTree = "<group>"; };
 		2ED0A857280471D500839122 /* HoroscopeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeDetailViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				2EE2490F2800AB9E00B5F7DA /* AppDelegate.swift */,
 				2EE249112800AB9E00B5F7DA /* SceneDelegate.swift */,
 				2EE249132800AB9E00B5F7DA /* ViewController.swift */,
+				2E8E8A042807242D0036F176 /* PageViewController.swift */,
+				2E8E8A062807249C0036F176 /* JournalViewController.swift */,
 				2ED0A8592804844000839122 /* OnboardingViewController.swift */,
 				2EE249232800B26C00B5F7DA /* HomeViewController.swift */,
 				2EE249252800BBC000B5F7DA /* Agenda.swift */,
@@ -195,6 +201,8 @@
 				2EE2492C2800C07B00B5F7DA /* UIViewController+alert.swift in Sources */,
 				2EE249362802297E00B5F7DA /* WeatherLocation.swift in Sources */,
 				2ED0A85428046AD000839122 /* HoroscopeUser.swift in Sources */,
+				2E8E8A052807242D0036F176 /* PageViewController.swift in Sources */,
+				2E8E8A072807249C0036F176 /* JournalViewController.swift in Sources */,
 				2EE24932280228CD00B5F7DA /* WeatherDetail.swift in Sources */,
 				2EE249302800CAFF00B5F7DA /* ListTableViewCell.swift in Sources */,
 			);
