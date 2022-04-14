@@ -33,32 +33,38 @@ class HomeViewController: UIViewController, ListTableViewCellDelegate {
     var weatherDetail: WeatherDetail!
     var locationManager: CLLocationManager!
     var horscopeDetail: HoroscopeDetail!
+    var user: HoroscopeUser!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-     
-    
+       horscopeDetail = HoroscopeDetail(starSign: "aries", name: "", signNumber: 0)
         
         
-        if agendaItems.agendaArray.count != 0 {
-            addButton.isHidden = true
-            addButton.isEnabled = false
+            
+        
+        
+            if self.agendaItems.agendaArray.count != 0 {
+                self.addButton.isHidden = true
+                self.addButton.isEnabled = false
         }
-        let currentLocation = CLLocation()
-        weatherDetail = WeatherDetail(name: "current locatiton", latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
-        horscopeDetail = HoroscopeDetail(starSign: "aries", name: "", signNumber: 0)
+        getLocation()
+        weatherDetail = WeatherDetail(name: "current locatiton", latitude: locationManager.location?.coordinate.latitude ?? 0.0, longitude: locationManager.location?.coordinate.latitude ?? 0.0)
             weatherLabel.text = ""
+      
         
-        weatherDetail.getData {
+            weatherDetail.getData {
             DispatchQueue.main.async {
+                print(self.weatherDetail.name)
                 self.weatherLabel.text = "\(self.weatherDetail.summary) \(self.weatherDetail.dayIcon) \(self.weatherDetail.temperature)°"
+       
             }
         }
-        horscopeDetail.getData {
+            horscopeDetail.getData {
             DispatchQueue.main.async {
                 self.horoscopeLabel.text = self.horscopeDetail.horoscope
             }
         }
+        
         
         
     }
@@ -213,6 +219,8 @@ extension HomeViewController: CLLocationManagerDelegate {
         //TODO: deal with change in location
         let currentLocation = locations.last ?? CLLocation()
         print("current location is \(currentLocation)")
+        print("❤️\(CLLocation())")
+       
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(currentLocation) { placemarks, error in
             var locationName = ""

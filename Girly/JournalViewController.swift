@@ -13,9 +13,12 @@ private let dateFormatter: DateFormatter = {
     return dateFormatter
 }()
 
-var dictionary = ["date" : "text field"]
+var dictionary = ["String": ""]
 
-class JournalViewController: UIViewController {
+
+//var dictionary = ["date" : "text field"]
+
+class JournalViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
@@ -27,8 +30,14 @@ class JournalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUserInterface()
-        dictionary[dateLabel.text!] = textView.text ?? ""
+       
+        textView.delegate = self
+        textView.becomeFirstResponder()
+        loadData {
+            self.updateUserInterface()
+            
+        }
+        
         saveData()
         
        
@@ -36,21 +45,33 @@ class JournalViewController: UIViewController {
     
     
     @IBAction func dateChangeButton(_ sender: UIButton) {
-        dictionary[dateLabel.text!] = textView.text ?? ""
+       dictionary[dateLabel.text!] = textView.text ?? ""
         dateIndex += sender.tag
         updateUserInterface()
+        saveData()
         
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+            if(text == "\n") {
+                textView.resignFirstResponder()
+                return false
+            }
+            return true
+        }
+    
     func updateUserInterface() {
+        
         var date = calendar.date(byAdding: .day, value: dateIndex, to: Date())
         dateLabel.text = dateFormatter.string(from: date!)
-        textView.text = dictionary[dateLabel.text!]
+        textView.text = dictionary[dateLabel.text!] ?? ""
+//        if dateLabel.text != "\(dateFormatter.string(from: Date()))" {
         if dateLabel.text != "\(dateFormatter.string(from: Date()))" {
             textView.isEditable = false
         } else {
             textView.isEditable = true
         }
+       
     }
     
    
@@ -87,7 +108,7 @@ class JournalViewController: UIViewController {
         guard let data = try? Data(contentsOf: documentURL) else {return}
         let jsonDecoder = JSONDecoder()
         do {
-//            dictionary = try jsonDecoder.decode(dictionary.self, from: data)
+          dictionary = try jsonDecoder.decode([String: String].self, from: data)
             
            }
         catch {print("error in loading data")

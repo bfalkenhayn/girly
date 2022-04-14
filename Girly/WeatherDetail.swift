@@ -85,7 +85,7 @@ class WeatherDetail: WeatherLocation {
     let result = JSONDecoder()
     
     func getData (completed: @escaping () -> ()) {
-        print("lets see if the function is even getting called")
+        
         let urlString = "https://api.openweathermap.org/data/2.5/onecall?lat=\(latitude)&lon=\(longitude)&exclude=minutely&units=imperial&appid=\(APIKeys.openWeatherKey)"
         guard let url = URL(string: urlString) else {
             print("could not create URL")
@@ -116,6 +116,7 @@ class WeatherDetail: WeatherLocation {
                     let dailyHigh = Int(result.daily[index].temp.max.rounded())
                     let dailyLow = Int(result.daily[index].temp.min.rounded())
                     let dailyWeather = DailyWeather(dailyIcon: dailyIcon, dailyWeekDay: dailyWeekday, dailySummary: dailySummary, dailyHigh: dailyHigh, dailyLow: dailyLow)
+                    
                     self.dailyWeatherData.append(dailyWeather)
                 }
                 let lastHour = min(24, result.hourly.count)

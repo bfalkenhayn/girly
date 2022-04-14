@@ -18,6 +18,8 @@ class HoroscopeUser: Codable {
         self.signNumber = signNumber
     }
     
+    
+    
    
     
 }
