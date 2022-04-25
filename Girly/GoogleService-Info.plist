@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>870550603027-sal0tc2btj834nam55d8qibb94binlp6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.870550603027-sal0tc2btj834nam55d8qibb94binlp6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAGFoh5iLB0mXbvTJIJiF_oM6DPBwCDhQc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>870550603027</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Bridget</string>
+	<key>PROJECT_ID</key>
+	<string>girlyapp2001</string>
+	<key>STORAGE_BUCKET</key>
+	<string>girlyapp2001.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:870550603027:ios:629c5dd949c7889f7b46e6</string>
+</dict>
+</plist>

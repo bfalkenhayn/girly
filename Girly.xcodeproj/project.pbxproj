@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E2FB5E72808863C001359CE /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2FB5E62808863C001359CE /* File.swift */; };
+		2E073E872816115700EE637B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E073E862816115700EE637B /* Post.swift */; };
+		2E073E89281617B000EE637B /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E073E88281617B000EE637B /* Posts.swift */; };
+		2E073E8B2816189B00EE637B /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E073E8A2816189B00EE637B /* FeedTableViewCell.swift */; };
+		2E073E8D281622F200EE637B /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E073E8C281622F200EE637B /* NewPostViewController.swift */; };
+		2E2FB5E72808863C001359CE /* Prompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2FB5E62808863C001359CE /* Prompts.swift */; };
+		2E73CD682808A70000B518B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73CD672808A6FF00B518B1 /* LoginViewController.swift */; };
+		2E73CD6C2808B06F00B518B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E73CD6B2808B06F00B518B1 /* GoogleService-Info.plist */; };
 		2E8E8A052807242D0036F176 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E8A042807242D0036F176 /* PageViewController.swift */; };
 		2E8E8A072807249C0036F176 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E8A062807249C0036F176 /* JournalViewController.swift */; };
 		2E8E8A0928075EF30036F176 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E8A0828075EF30036F176 /* FeedViewController.swift */; };
@@ -31,10 +37,17 @@
 		2EE24932280228CD00B5F7DA /* WeatherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE24931280228CD00B5F7DA /* WeatherDetail.swift */; };
 		2EE24934280228DB00B5F7DA /* APIkeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE24933280228DB00B5F7DA /* APIkeys.swift */; };
 		2EE249362802297E00B5F7DA /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE249352802297E00B5F7DA /* WeatherLocation.swift */; };
+		6DA583D7E901FE3F0CD87C97 /* Pods_Girly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF7F27ACDA40797C1150E59 /* Pods_Girly.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E2FB5E62808863C001359CE /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		2E073E862816115700EE637B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2E073E88281617B000EE637B /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		2E073E8A2816189B00EE637B /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		2E073E8C281622F200EE637B /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		2E2FB5E62808863C001359CE /* Prompts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompts.swift; sourceTree = "<group>"; };
+		2E73CD672808A6FF00B518B1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2E73CD6B2808B06F00B518B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E8E8A042807242D0036F176 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		2E8E8A062807249C0036F176 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
 		2E8E8A0828075EF30036F176 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +73,9 @@
 		2EE24931280228CD00B5F7DA /* WeatherDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetail.swift; sourceTree = "<group>"; };
 		2EE24933280228DB00B5F7DA /* APIkeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIkeys.swift; sourceTree = "<group>"; };
 		2EE249352802297E00B5F7DA /* WeatherLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
+		5634F862BE157485832FAD74 /* Pods-Girly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Girly.release.xcconfig"; path = "Target Support Files/Pods-Girly/Pods-Girly.release.xcconfig"; sourceTree = "<group>"; };
+		BA92E503A11A3B939D5D1B95 /* Pods-Girly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Girly.debug.xcconfig"; path = "Target Support Files/Pods-Girly/Pods-Girly.debug.xcconfig"; sourceTree = "<group>"; };
+		ECF7F27ACDA40797C1150E59 /* Pods_Girly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Girly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,17 +83,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DA583D7E901FE3F0CD87C97 /* Pods_Girly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13E25BB5596135098793D82E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA92E503A11A3B939D5D1B95 /* Pods-Girly.debug.xcconfig */,
+				5634F862BE157485832FAD74 /* Pods-Girly.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2EE249032800AB9E00B5F7DA = {
 			isa = PBXGroup;
 			children = (
 				2EE2490E2800AB9E00B5F7DA /* Girly */,
 				2EE2490D2800AB9E00B5F7DA /* Products */,
+				13E25BB5596135098793D82E /* Pods */,
+				D305AB7BBB808C3E1C05FC4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,21 +123,26 @@
 				2EE2490F2800AB9E00B5F7DA /* AppDelegate.swift */,
 				2EE249112800AB9E00B5F7DA /* SceneDelegate.swift */,
 				2EE249132800AB9E00B5F7DA /* ViewController.swift */,
-				2E8E8A042807242D0036F176 /* PageViewController.swift */,
-				2E8E8A062807249C0036F176 /* JournalViewController.swift */,
-				2E2FB5E62808863C001359CE /* File.swift */,
+				2E73CD672808A6FF00B518B1 /* LoginViewController.swift */,
 				2ED0A8592804844000839122 /* OnboardingViewController.swift */,
 				2EE249232800B26C00B5F7DA /* HomeViewController.swift */,
+				2E8E8A042807242D0036F176 /* PageViewController.swift */,
+				2E8E8A062807249C0036F176 /* JournalViewController.swift */,
+				2ED0A857280471D500839122 /* HoroscopeDetailViewController.swift */,
+				2EE249292800BE8400B5F7DA /* ToDoDetailTableViewController.swift */,
+				2E8E8A0828075EF30036F176 /* FeedViewController.swift */,
+				2E073E8C281622F200EE637B /* NewPostViewController.swift */,
+				2E073E8A2816189B00EE637B /* FeedTableViewCell.swift */,
+				2E2FB5E62808863C001359CE /* Prompts.swift */,
+				2E073E862816115700EE637B /* Post.swift */,
+				2E073E88281617B000EE637B /* Posts.swift */,
 				2EE249252800BBC000B5F7DA /* Agenda.swift */,
 				2EE249272800BC9600B5F7DA /* AgendaItems.swift */,
-				2EE249292800BE8400B5F7DA /* ToDoDetailTableViewController.swift */,
 				2EE2492F2800CAFF00B5F7DA /* ListTableViewCell.swift */,
 				2EE249352802297E00B5F7DA /* WeatherLocation.swift */,
 				2EE24931280228CD00B5F7DA /* WeatherDetail.swift */,
 				2ED0A85328046AD000839122 /* HoroscopeUser.swift */,
 				2ED0A85528046AE200839122 /* HoroscopeDetail.swift */,
-				2ED0A857280471D500839122 /* HoroscopeDetailViewController.swift */,
-				2E8E8A0828075EF30036F176 /* FeedViewController.swift */,
 				2EE249152800AB9E00B5F7DA /* Main.storyboard */,
 				2EE2492D2800C83D00B5F7DA /* LocalNotificationManager.swift */,
 				2EE2492B2800C07B00B5F7DA /* UIViewController+alert.swift */,
@@ -117,8 +150,17 @@
 				2EE2491A2800ABA200B5F7DA /* LaunchScreen.storyboard */,
 				2EE24933280228DB00B5F7DA /* APIkeys.swift */,
 				2EE2491D2800ABA200B5F7DA /* Info.plist */,
+				2E73CD6B2808B06F00B518B1 /* GoogleService-Info.plist */,
 			);
 			path = Girly;
+			sourceTree = "<group>";
+		};
+		D305AB7BBB808C3E1C05FC4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECF7F27ACDA40797C1150E59 /* Pods_Girly.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +170,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EE249202800ABA200B5F7DA /* Build configuration list for PBXNativeTarget "Girly" */;
 			buildPhases = (
+				D4C15EB0EC5C4CB40B406E2E /* [CP] Check Pods Manifest.lock */,
 				2EE249082800AB9E00B5F7DA /* Sources */,
 				2EE249092800AB9E00B5F7DA /* Frameworks */,
 				2EE2490A2800AB9E00B5F7DA /* Resources */,
+				33CC0760D53DBC20BF9009E5 /* [CP] Embed Pods Frameworks */,
+				C99B334310A78AE6EAC151B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EE2491C2800ABA200B5F7DA /* LaunchScreen.storyboard in Resources */,
+				2E73CD6C2808B06F00B518B1 /* GoogleService-Info.plist in Resources */,
 				2EE249192800ABA200B5F7DA /* Assets.xcassets in Resources */,
 				2EE249172800AB9E00B5F7DA /* Main.storyboard in Resources */,
 			);
@@ -187,28 +233,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		33CC0760D53DBC20BF9009E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Girly/Pods-Girly-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Girly/Pods-Girly-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Girly/Pods-Girly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C99B334310A78AE6EAC151B8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Girly/Pods-Girly-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Girly/Pods-Girly-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Girly/Pods-Girly-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4C15EB0EC5C4CB40B406E2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Girly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2EE249082800AB9E00B5F7DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2EE249142800AB9E00B5F7DA /* ViewController.swift in Sources */,
+				2E073E8D281622F200EE637B /* NewPostViewController.swift in Sources */,
 				2ED0A85628046AE200839122 /* HoroscopeDetail.swift in Sources */,
 				2E8E8A0928075EF30036F176 /* FeedViewController.swift in Sources */,
 				2ED0A858280471D500839122 /* HoroscopeDetailViewController.swift in Sources */,
+				2E073E8B2816189B00EE637B /* FeedTableViewCell.swift in Sources */,
 				2ED0A85A2804844000839122 /* OnboardingViewController.swift in Sources */,
 				2EE249102800AB9E00B5F7DA /* AppDelegate.swift in Sources */,
 				2EE249122800AB9E00B5F7DA /* SceneDelegate.swift in Sources */,
+				2E073E89281617B000EE637B /* Posts.swift in Sources */,
 				2EE249262800BBC000B5F7DA /* Agenda.swift in Sources */,
 				2EE2492A2800BE8400B5F7DA /* ToDoDetailTableViewController.swift in Sources */,
 				2EE249282800BC9600B5F7DA /* AgendaItems.swift in Sources */,
+				2E73CD682808A70000B518B1 /* LoginViewController.swift in Sources */,
 				2EE24934280228DB00B5F7DA /* APIkeys.swift in Sources */,
+				2E073E872816115700EE637B /* Post.swift in Sources */,
 				2EE2492E2800C83D00B5F7DA /* LocalNotificationManager.swift in Sources */,
 				2EE249242800B26C00B5F7DA /* HomeViewController.swift in Sources */,
 				2EE2492C2800C07B00B5F7DA /* UIViewController+alert.swift in Sources */,
 				2EE249362802297E00B5F7DA /* WeatherLocation.swift in Sources */,
 				2ED0A85428046AD000839122 /* HoroscopeUser.swift in Sources */,
-				2E2FB5E72808863C001359CE /* File.swift in Sources */,
+				2E2FB5E72808863C001359CE /* Prompts.swift in Sources */,
 				2E8E8A052807242D0036F176 /* PageViewController.swift in Sources */,
 				2E8E8A072807249C0036F176 /* JournalViewController.swift in Sources */,
 				2EE24932280228CD00B5F7DA /* WeatherDetail.swift in Sources */,
@@ -356,6 +466,7 @@
 		};
 		2EE249212800ABA200B5F7DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA92E503A11A3B939D5D1B95 /* Pods-Girly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -386,6 +497,7 @@
 		};
 		2EE249222800ABA200B5F7DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5634F862BE157485832FAD74 /* Pods-Girly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
