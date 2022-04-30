@@ -20,7 +20,7 @@ class Post: NSObject {
     
     var dictionary: [String: Any] {
         let timeIntervalDate = timePosted.timeIntervalSince1970
-        return  ["content": content, "promp": prompt, "timePosted": timeIntervalDate, "numberOfLikes": numberOfLikes, "numberOfComments": numberOfComments, "documentID": documentID, "postingUserID": postingUserID ]
+        return  ["content": content, "prompt": prompt, "timePosted": timeIntervalDate, "numberOfLikes": numberOfLikes, "numberOfComments": numberOfComments, "postingUserID": postingUserID ]
     }
     
     init(content: String, prompt:String, timePosted: Date, numberOfLikes: Int, numberOfComments: Int, documentID: String, postingUserID: String) {

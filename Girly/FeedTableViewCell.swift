@@ -6,8 +6,14 @@
 //
 
 import UIKit
+private let dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "MM/dd/yyyy h:mm a"
+    
+    return dateFormatter
+}()
 
-protocol FeedTableViewCellDelegate: class {
+protocol FeedTableViewCellDelegate: AnyObject {
     func likePress(sender: FeedTableViewCell)
 }
 
@@ -18,26 +24,31 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var timePosted: UILabel!
+    
+    var comments:Comments!
+    
+    var cellLiked = false
+    
     
     var post: Post! {
         didSet{
+            
+//            post.numberOfComments = comments.commentsArray.count
             promptLabel.text = post.prompt
             contentLabel.text = post.content
             post.numberOfComments == 1 ? "reply" : "replies"
             commentLabel.text = "\(post.numberOfComments) \(post.numberOfComments == 1 ? "reply" : "replies")"
-            
-        
+            timePosted.text = dateFormatter.string(from: post.timePosted)
+
         }
     }
     
-    @IBAction func likePressed(_ sender: Any) {
-        if likeButton.imageView?.image == UIImage(systemName: "heart.fill") {
-            likeButton.imageView?.image = UIImage(systemName: "heart")
-        } else {
-            delegate?.likePress(sender: self)
-            likeButton.imageView?.image = UIImage(systemName: "heart.fill")
-        }
-        
+    
+    @IBAction func likePressed(_ sender: UIButton) {
+        print("likePressed")
+       
+        delegate?.likePress(sender: self)
     }
     
     

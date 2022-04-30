@@ -11,6 +11,7 @@ class FeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
     var posts: Posts!
+    var post: Post!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,16 +33,23 @@ class FeedViewController: UIViewController {
     func sortBasedOnSegmentPressed(){
         switch sortSegmentedControl.selectedSegmentIndex {
         case 0:
-            posts.postArray.sort(by: {$0.numberOfLikes < $1.numberOfLikes})
+            posts.postArray.sort(by: {$0.numberOfLikes > $1.numberOfLikes})
            
         case 1:
-           0
+            posts.postArray.sort(by: {$0.timePosted > $1.timePosted})
         default:
             0
         }
         tableView.reloadData()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowPost" {
+            let destination = segue.destination as! PostDetailViewController
+             let selectedIndexPath = tableView.indexPathForSelectedRow!
+            destination.post = posts.postArray[selectedIndexPath.row]
+        }
+    }
     
     @IBAction func sortSegmentPressed(_ sender: UISegmentedControl) {
         sortBasedOnSegmentPressed()
@@ -58,13 +66,32 @@ class FeedViewController: UIViewController {
 
 }
 
-extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
+extension FeedViewController: UITableViewDelegate, UITableViewDataSource, FeedTableViewCellDelegate {
     func likePress(sender: FeedTableViewCell) {
-        if let selectedIndexPath = tableView.indexPath(for: sender){
-            posts.postArray[selectedIndexPath.row].numberOfLikes += 1
-            tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+        if let selectedIndexPath = tableView.indexPath(for: sender) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: selectedIndexPath) as! FeedTableViewCell
+            cell.cellLiked = !cell.cellLiked
+            
+            if cell.cellLiked == true {
+                posts.postArray[selectedIndexPath.row].numberOfLikes += 1
+            } else {
+                posts.postArray[selectedIndexPath.row].numberOfLikes += 1
             }
+//
+        
+            tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+            posts.postArray[selectedIndexPath.row].saveData(completion: { [self] success in
+                if success {
+                    print("number of likes is \(self.posts.postArray[selectedIndexPath.row].numberOfLikes)")
+                }
+            })
+            
+            
+        }
+        
     }
+    
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.postArray.count
@@ -74,7 +101,10 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedTableViewCell
        
         cell.post = posts.postArray[indexPath.row]
-        
+//        if cell.likeButton.isSelected {
+//            posts.postArray[indexPath.row].numberOfLikes += 1}
+        cell.likeButton.isSelected = cell.cellLiked
+        cell.delegate = self
                cell.layer.masksToBounds = true
                cell.layer.cornerRadius = 8
         return cell

@@ -11,10 +11,23 @@
 		2E073E89281617B000EE637B /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E073E88281617B000EE637B /* Posts.swift */; };
 		2E073E8B2816189B00EE637B /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E073E8A2816189B00EE637B /* FeedTableViewCell.swift */; };
 		2E073E8D281622F200EE637B /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E073E8C281622F200EE637B /* NewPostViewController.swift */; };
+		2E2B8525281C464C00449294 /* QuoteAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2B8524281C464C00449294 /* QuoteAPICall.swift */; };
 		2E2FB5E72808863C001359CE /* Prompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2FB5E62808863C001359CE /* Prompts.swift */; };
+		2E5DCA8028177F7A00B312E8 /* AstrologyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5DCA7F28177F7900B312E8 /* AstrologyInfo.swift */; };
+		2E66272E2816E19D002BC95D /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66272D2816E19D002BC95D /* AboutViewController.swift */; };
+		2E6627302816E873002BC95D /* AboutDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66272F2816E873002BC95D /* AboutDetailViewController.swift */; };
+		2E6627332816EA6C002BC95D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6627312816EA67002BC95D /* Users.swift */; };
+		2E6627342816EA6C002BC95D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6627322816EA6C002BC95D /* User.swift */; };
+		2E6627392817026C002BC95D /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6627362817026A002BC95D /* Comments.swift */; };
+		2E66273A2817026C002BC95D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6627372817026C002BC95D /* Comment.swift */; };
+		2E66273C28170E6D002BC95D /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66273B28170E6D002BC95D /* PostDetailViewController.swift */; };
+		2E66273E28171778002BC95D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66273D28171778002BC95D /* CommentTableViewCell.swift */; };
+		2E66274028171C28002BC95D /* NewCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E66273F28171C27002BC95D /* NewCommentViewController.swift */; };
+		2E6627422817246A002BC95D /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6627412817246A002BC95D /* ListTableViewCell.swift */; };
+		2E66274428173860002BC95D /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6627432817385F002BC95D /* ToDoItem.swift */; };
+		2E6627462817386D002BC95D /* ToDoItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6627452817386D002BC95D /* ToDoItems.swift */; };
 		2E73CD682808A70000B518B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73CD672808A6FF00B518B1 /* LoginViewController.swift */; };
 		2E73CD6C2808B06F00B518B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E73CD6B2808B06F00B518B1 /* GoogleService-Info.plist */; };
-		2E8E8A052807242D0036F176 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E8A042807242D0036F176 /* PageViewController.swift */; };
 		2E8E8A072807249C0036F176 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E8A062807249C0036F176 /* JournalViewController.swift */; };
 		2E8E8A0928075EF30036F176 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8E8A0828075EF30036F176 /* FeedViewController.swift */; };
 		2ED0A85428046AD000839122 /* HoroscopeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED0A85328046AD000839122 /* HoroscopeUser.swift */; };
@@ -33,7 +46,6 @@
 		2EE2492A2800BE8400B5F7DA /* ToDoDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE249292800BE8400B5F7DA /* ToDoDetailTableViewController.swift */; };
 		2EE2492C2800C07B00B5F7DA /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2492B2800C07B00B5F7DA /* UIViewController+alert.swift */; };
 		2EE2492E2800C83D00B5F7DA /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2492D2800C83D00B5F7DA /* LocalNotificationManager.swift */; };
-		2EE249302800CAFF00B5F7DA /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2492F2800CAFF00B5F7DA /* ListTableViewCell.swift */; };
 		2EE24932280228CD00B5F7DA /* WeatherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE24931280228CD00B5F7DA /* WeatherDetail.swift */; };
 		2EE24934280228DB00B5F7DA /* APIkeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE24933280228DB00B5F7DA /* APIkeys.swift */; };
 		2EE249362802297E00B5F7DA /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE249352802297E00B5F7DA /* WeatherLocation.swift */; };
@@ -45,10 +57,23 @@
 		2E073E88281617B000EE637B /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		2E073E8A2816189B00EE637B /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		2E073E8C281622F200EE637B /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		2E2B8524281C464C00449294 /* QuoteAPICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteAPICall.swift; sourceTree = "<group>"; };
 		2E2FB5E62808863C001359CE /* Prompts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompts.swift; sourceTree = "<group>"; };
+		2E5DCA7F28177F7900B312E8 /* AstrologyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstrologyInfo.swift; sourceTree = "<group>"; };
+		2E66272D2816E19D002BC95D /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		2E66272F2816E873002BC95D /* AboutDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutDetailViewController.swift; sourceTree = "<group>"; };
+		2E6627312816EA67002BC95D /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		2E6627322816EA6C002BC95D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2E6627362817026A002BC95D /* Comments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		2E6627372817026C002BC95D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		2E66273B28170E6D002BC95D /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		2E66273D28171778002BC95D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		2E66273F28171C27002BC95D /* NewCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCommentViewController.swift; sourceTree = "<group>"; };
+		2E6627412817246A002BC95D /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListTableViewCell.swift; path = "../../ToDo List/ToDo List/ListTableViewCell.swift"; sourceTree = "<group>"; };
+		2E6627432817385F002BC95D /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		2E6627452817386D002BC95D /* ToDoItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItems.swift; sourceTree = "<group>"; };
 		2E73CD672808A6FF00B518B1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2E73CD6B2808B06F00B518B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2E8E8A042807242D0036F176 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		2E8E8A062807249C0036F176 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
 		2E8E8A0828075EF30036F176 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		2ED0A85328046AD000839122 /* HoroscopeUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeUser.swift; sourceTree = "<group>"; };
@@ -69,7 +94,6 @@
 		2EE249292800BE8400B5F7DA /* ToDoDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoDetailTableViewController.swift; sourceTree = "<group>"; };
 		2EE2492B2800C07B00B5F7DA /* UIViewController+alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		2EE2492D2800C83D00B5F7DA /* LocalNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
-		2EE2492F2800CAFF00B5F7DA /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		2EE24931280228CD00B5F7DA /* WeatherDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetail.swift; sourceTree = "<group>"; };
 		2EE24933280228DB00B5F7DA /* APIkeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIkeys.swift; sourceTree = "<group>"; };
 		2EE249352802297E00B5F7DA /* WeatherLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
@@ -126,24 +150,36 @@
 				2E73CD672808A6FF00B518B1 /* LoginViewController.swift */,
 				2ED0A8592804844000839122 /* OnboardingViewController.swift */,
 				2EE249232800B26C00B5F7DA /* HomeViewController.swift */,
-				2E8E8A042807242D0036F176 /* PageViewController.swift */,
 				2E8E8A062807249C0036F176 /* JournalViewController.swift */,
 				2ED0A857280471D500839122 /* HoroscopeDetailViewController.swift */,
 				2EE249292800BE8400B5F7DA /* ToDoDetailTableViewController.swift */,
 				2E8E8A0828075EF30036F176 /* FeedViewController.swift */,
+				2E66273B28170E6D002BC95D /* PostDetailViewController.swift */,
 				2E073E8C281622F200EE637B /* NewPostViewController.swift */,
+				2E66272D2816E19D002BC95D /* AboutViewController.swift */,
+				2E66272F2816E873002BC95D /* AboutDetailViewController.swift */,
+				2E66273F28171C27002BC95D /* NewCommentViewController.swift */,
 				2E073E8A2816189B00EE637B /* FeedTableViewCell.swift */,
+				2E6627412817246A002BC95D /* ListTableViewCell.swift */,
+				2E66273D28171778002BC95D /* CommentTableViewCell.swift */,
 				2E2FB5E62808863C001359CE /* Prompts.swift */,
 				2E073E862816115700EE637B /* Post.swift */,
 				2E073E88281617B000EE637B /* Posts.swift */,
 				2EE249252800BBC000B5F7DA /* Agenda.swift */,
 				2EE249272800BC9600B5F7DA /* AgendaItems.swift */,
-				2EE2492F2800CAFF00B5F7DA /* ListTableViewCell.swift */,
+				2E6627322816EA6C002BC95D /* User.swift */,
+				2E6627312816EA67002BC95D /* Users.swift */,
+				2E6627372817026C002BC95D /* Comment.swift */,
+				2E6627362817026A002BC95D /* Comments.swift */,
 				2EE249352802297E00B5F7DA /* WeatherLocation.swift */,
 				2EE24931280228CD00B5F7DA /* WeatherDetail.swift */,
 				2ED0A85328046AD000839122 /* HoroscopeUser.swift */,
 				2ED0A85528046AE200839122 /* HoroscopeDetail.swift */,
+				2E2B8524281C464C00449294 /* QuoteAPICall.swift */,
+				2E6627432817385F002BC95D /* ToDoItem.swift */,
+				2E6627452817386D002BC95D /* ToDoItems.swift */,
 				2EE249152800AB9E00B5F7DA /* Main.storyboard */,
+				2E5DCA7F28177F7900B312E8 /* AstrologyInfo.swift */,
 				2EE2492D2800C83D00B5F7DA /* LocalNotificationManager.swift */,
 				2EE2492B2800C07B00B5F7DA /* UIViewController+alert.swift */,
 				2EE249182800ABA200B5F7DA /* Assets.xcassets */,
@@ -299,8 +335,11 @@
 			files = (
 				2EE249142800AB9E00B5F7DA /* ViewController.swift in Sources */,
 				2E073E8D281622F200EE637B /* NewPostViewController.swift in Sources */,
+				2E66274428173860002BC95D /* ToDoItem.swift in Sources */,
 				2ED0A85628046AE200839122 /* HoroscopeDetail.swift in Sources */,
 				2E8E8A0928075EF30036F176 /* FeedViewController.swift in Sources */,
+				2E6627462817386D002BC95D /* ToDoItems.swift in Sources */,
+				2E66274028171C28002BC95D /* NewCommentViewController.swift in Sources */,
 				2ED0A858280471D500839122 /* HoroscopeDetailViewController.swift in Sources */,
 				2E073E8B2816189B00EE637B /* FeedTableViewCell.swift in Sources */,
 				2ED0A85A2804844000839122 /* OnboardingViewController.swift in Sources */,
@@ -308,21 +347,30 @@
 				2EE249122800AB9E00B5F7DA /* SceneDelegate.swift in Sources */,
 				2E073E89281617B000EE637B /* Posts.swift in Sources */,
 				2EE249262800BBC000B5F7DA /* Agenda.swift in Sources */,
+				2E5DCA8028177F7A00B312E8 /* AstrologyInfo.swift in Sources */,
+				2E6627342816EA6C002BC95D /* User.swift in Sources */,
+				2E6627392817026C002BC95D /* Comments.swift in Sources */,
+				2E6627422817246A002BC95D /* ListTableViewCell.swift in Sources */,
 				2EE2492A2800BE8400B5F7DA /* ToDoDetailTableViewController.swift in Sources */,
+				2E66272E2816E19D002BC95D /* AboutViewController.swift in Sources */,
 				2EE249282800BC9600B5F7DA /* AgendaItems.swift in Sources */,
+				2E66273A2817026C002BC95D /* Comment.swift in Sources */,
 				2E73CD682808A70000B518B1 /* LoginViewController.swift in Sources */,
+				2E2B8525281C464C00449294 /* QuoteAPICall.swift in Sources */,
+				2E66273C28170E6D002BC95D /* PostDetailViewController.swift in Sources */,
 				2EE24934280228DB00B5F7DA /* APIkeys.swift in Sources */,
 				2E073E872816115700EE637B /* Post.swift in Sources */,
+				2E6627332816EA6C002BC95D /* Users.swift in Sources */,
 				2EE2492E2800C83D00B5F7DA /* LocalNotificationManager.swift in Sources */,
 				2EE249242800B26C00B5F7DA /* HomeViewController.swift in Sources */,
 				2EE2492C2800C07B00B5F7DA /* UIViewController+alert.swift in Sources */,
 				2EE249362802297E00B5F7DA /* WeatherLocation.swift in Sources */,
 				2ED0A85428046AD000839122 /* HoroscopeUser.swift in Sources */,
 				2E2FB5E72808863C001359CE /* Prompts.swift in Sources */,
-				2E8E8A052807242D0036F176 /* PageViewController.swift in Sources */,
 				2E8E8A072807249C0036F176 /* JournalViewController.swift in Sources */,
 				2EE24932280228CD00B5F7DA /* WeatherDetail.swift in Sources */,
-				2EE249302800CAFF00B5F7DA /* ListTableViewCell.swift in Sources */,
+				2E66273E28171778002BC95D /* CommentTableViewCell.swift in Sources */,
+				2E6627302816E873002BC95D /* AboutDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

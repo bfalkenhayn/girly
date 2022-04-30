@@ -22,7 +22,7 @@ class ToDoDetailTableViewController: UITableViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var noteView: UITextView!
     @IBOutlet weak var reminderSwitch: UISwitch!
-    @IBOutlet weak var dateLabel: UILabel!
+   
     
     
     
@@ -33,11 +33,7 @@ class ToDoDetailTableViewController: UITableViewController {
         datePicker.date = toDoItem.time
         noteView.text = toDoItem.notes
         reminderSwitch.isOn = toDoItem.reminderSet
-        if reminderSwitch.isOn {
-            dateLabel.textColor  = .black
-        }
-        else {dateLabel.textColor = .gray}
-        dateLabel.text = dateFormatter.string(from: toDoItem.time)
+        
         enableDisableSaveButton(text: nameField.text!)
         
     }
@@ -52,7 +48,7 @@ class ToDoDetailTableViewController: UITableViewController {
 
 
                 }
-                self.dateLabel.textColor = (self.reminderSwitch.isOn ? .black : .gray)
+               
                 self.tableView.beginUpdates()
                 self.tableView.endUpdates()
                 self.view.endEditing(true)
@@ -85,6 +81,7 @@ class ToDoDetailTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         toDoItem = Agenda(time: datePicker.date, activity: nameField.text!, notes: noteView.text, reminderSet: reminderSwitch.isOn, notificationID: "", completed: false)
+        
       
     }
     
@@ -109,7 +106,8 @@ class ToDoDetailTableViewController: UITableViewController {
     
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         self.view.endEditing(true)
-        dateLabel.text = dateFormatter.string(from: sender.date)  }
+        
+        }
     
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         enableDisableSaveButton(text: sender.text!)
@@ -122,7 +120,7 @@ extension ToDoDetailTableViewController {
         switch indexPath {
         case IndexPath(row: 1, section: 1): return
             reminderSwitch.isOn ? datePicker.frame.height : 0
-        case IndexPath(row: 0, section: 2):
+        case IndexPath(row: 0, section: 3):
             return 200
         default:
             return 44

@@ -6,76 +6,107 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuthUI
+import FirebaseGoogleAuthUI
 
 class OnboardingViewController: UIViewController {
     
     @IBOutlet weak var doneButton: UIBarButtonItem!
-    @IBOutlet weak var nameField: UITextField!
-  
-    var horoscopeUser: HoroscopeUser!
    
+  
+    @IBOutlet var signButtons: [UIButton]!
+    
+    @IBOutlet weak var signLabel: UILabel!
+   
+    var starSign = ""
+  
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        
-//        if horoscopeUser.signNumber! >= 0 && nameField.text != nil {
-//            doneButton.isEnabled = true
-//        } else {
-//            doneButton.isEnabled = false
-//        }
-      
+
+        if starSign == "" {
+            doneButton.isEnabled = false
+        } else {
+            doneButton.isEnabled = true
+        }
     }
     
+    
+    @IBAction func buttonTest(_ sender: Any) {
+        print("button was pressed")
+    }
+    
+    
+    
+    func saveStarSign() {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(starSign){
+            UserDefaults.standard.set(encoded, forKey: "starSign")
+        }
+        else {
+            print("Saving encoded didn't work")
+        }
+    }
+    
+    @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+       
+        saveStarSign()
+    }
     @IBAction func signSelected(_ sender: UIButton) {
-        horoscopeUser.signNumber = sender.tag
-//        if horoscopeUser.signNumber! >= 0 && nameField.text != nil {
-//            doneButton.isEnabled = true
-//        } else {
-//            doneButton.isEnabled = false
-//        }
+        var signNumber = sender.tag
+        print("sign selected")
         
-        switch horoscopeUser.signNumber {
+        
+        switch signNumber {
         case 0:
-            horoscopeUser.starSign = "aries"
+          starSign = "aries"
         case 1:
-            horoscopeUser.starSign = "taurus"
+           starSign = "taurus"
         case 2:
-            horoscopeUser.starSign = "gemini"
+            starSign = "gemini"
         case 3:
-            horoscopeUser.starSign = "cancer"
+           starSign = "cancer"
         case 4:
-            horoscopeUser.starSign = "leo"
+            starSign = "leo"
         case 5:
-            horoscopeUser.starSign = "virgo"
+            starSign = "virgo"
         case 6:
-            horoscopeUser.starSign = "libra"
+           starSign = "libra"
         case 7:
-            horoscopeUser.starSign = "scorpio"
+          starSign = "scorpio"
         case 8:
-            horoscopeUser.starSign = "sagitarius"
+          starSign = "sagitarius"
         case 9:
-            horoscopeUser.starSign = "capricorn"
+           starSign = "capricorn"
         case 10:
-            horoscopeUser.starSign = "aquarius"
+           starSign = "aquarius"
         case 11:
-            horoscopeUser.starSign = "pisces"
+            starSign = "pisces"
         default:
-            horoscopeUser.starSign = "aries"
+           starSign = "aries"
             
         }
-      
-    }
-    
-    @IBAction func nameFieldChanged(_ sender: UITextField) {
-        horoscopeUser.name = nameField.text!
-        if horoscopeUser.signNumber ?? -1 >= 0 && nameField.text != nil {
-            doneButton.isEnabled = true
-        } else {
+        
+            signLabel.text = "Select Your Sign: \(starSign)"
+        saveStarSign()
+        if starSign == ""  {
             doneButton.isEnabled = false
+        } else {
+            doneButton.isEnabled = true
+   }
+        
+            
+               
         }
-      
-    }
+        
+        
+    
+    
+
+    
+    
     
  
     

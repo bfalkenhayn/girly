@@ -13,7 +13,7 @@ import FirebaseGoogleAuthUI
 class LoginViewController: UIViewController {
     
     var authUI: FUIAuth!
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +38,19 @@ class LoginViewController: UIViewController {
             loginViewController.modalPresentationStyle = .fullScreen
             present(loginViewController, animated: true, completion: nil)
         } else { // user is already logged in
-            performSegue(withIdentifier: "FirstShowSegue", sender: nil)
+            guard let currentUser = authUI.auth?.currentUser else {
+                return
+            }
+            let user = User(user: currentUser, starSign: "")
+            
+            user.saveIfNewUser { success in
+                if success {
+                    
+                    self.performSegue(withIdentifier: "FirstShowSegue", sender: nil)
+                } else {
+                    print("error try to save new user but failed")
+                }
+            }
         }
     }
     

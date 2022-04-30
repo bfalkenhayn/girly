@@ -10,6 +10,8 @@ import UserNotifications
 
 class AgendaItems {
     var agendaArray: [Agenda] = []
+    var todayAgendaArray: [Agenda] = []
+    var calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
     
     func loadData(completed: @escaping () -> ()) {
         let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -19,6 +21,14 @@ class AgendaItems {
         do {
            agendaArray = try jsonDecoder.decode(Array<Agenda>.self, from: data)
             agendaArray.sort(by: {$0.time < $1.time})
+            
+            
+            todayAgendaArray = agendaArray.filter{
+                return self.calendar.isDateInToday($0.time)
+             
+            }
+            print("load data function today agenda array is \(todayAgendaArray)")
+            
            }
         catch {print("error in loading data")
     }
@@ -36,6 +46,9 @@ class AgendaItems {
         do {
             try data?.write(to: documentURL, options: .noFileProtection)
             agendaArray.sort(by: {$0.time < $1.time})
+            todayAgendaArray = agendaArray.filter{
+                return self.calendar.isDateInToday($0.time)}
+            print("save data function today agenda array is \(todayAgendaArray)")
         } catch {print("error: could not save data")}
         setNotifications()
     }

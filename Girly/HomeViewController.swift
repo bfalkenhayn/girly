@@ -8,15 +8,18 @@
 import UIKit
 import UserNotifications
 import CoreLocation
+import Firebase
+import FirebaseAuthUI
+import FirebaseGoogleAuthUI
 
 private let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
-  
+    
     return dateFormatter
 }()
 class HomeViewController: UIViewController, ListTableViewCellDelegate {
-   
+    
     
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -26,64 +29,98 @@ class HomeViewController: UIViewController, ListTableViewCellDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     
-   
+    
     
     
     var agendaItems: AgendaItems!
+
     var weatherDetail: WeatherDetail!
     var locationManager: CLLocationManager!
-    var horscopeDetail: HoroscopeDetail!
-    var user: HoroscopeUser!
+    var horoscopeDetail: HoroscopeDetail!
+    var quoteAPICall: QuoteAPICall!
+    var starSign = ""
+    var horoscopeUser: HoroscopeUser!
+    
+    var users: Users!
+    var user: User!
+    var authUI: FUIAuth!
+    var calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       horscopeDetail = HoroscopeDetail(starSign: "aries", name: "", signNumber: 0)
         
-        
-            
-        
-        
-            if self.agendaItems.agendaArray.count != 0 {
-                self.addButton.isHidden = true
-                self.addButton.isEnabled = false
+        if self.agendaItems.agendaArray.count != 0 {
+            self.addButton.isHidden = true
+            self.addButton.isEnabled = false
         }
         getLocation()
         weatherDetail = WeatherDetail(name: "current locatiton", latitude: locationManager.location?.coordinate.latitude ?? 0.0, longitude: locationManager.location?.coordinate.latitude ?? 0.0)
-            weatherLabel.text = ""
-      
+        weatherLabel.text = ""
         
-            weatherDetail.getData {
+        
+        weatherDetail.getData {
             DispatchQueue.main.async {
                 print(self.weatherDetail.name)
                 self.weatherLabel.text = "\(self.weatherDetail.summary) \(self.weatherDetail.dayIcon) \(self.weatherDetail.temperature)°"
-       
+                
             }
         }
-            horscopeDetail.getData {
-            DispatchQueue.main.async {
-                self.horoscopeLabel.text = self.horscopeDetail.horoscope
-            }
-        }
-        
-        
         
     }
     
     
     override func viewDidLoad() {
+   
         super.viewDidLoad()
+        quoteLabel.text = ""
+       
+       
+        quoteAPICall = QuoteAPICall()
         agendaItems = AgendaItems()
+        users = Users()
+        let currentUser = Auth.auth().currentUser
+        
+        
+        loadStarSign()
+
+        
+        quoteAPICall.getData {
+            DispatchQueue.main.async {
+                self.quoteLabel.text = "\(self.quoteAPICall.content) -\(self.quoteAPICall.author)"
+            }
+            
+        }
+        
+        
         tableView.delegate = self
         tableView.dataSource = self
         dateLabel.text = dateFormatter.string(from: Date())
         LocalNotificationsManager.authorizeLocalNotifications(viewController: self)
         // Do any additional setup after loading the view.
         
+        horoscopeDetail = HoroscopeDetail(starSign: starSign, name: "")
+        
+        horoscopeDetail.getData {
+            DispatchQueue.main.async {
+                self.horoscopeLabel.text = "\(self.horoscopeDetail.horoscope)"
+            }
+        }
+        
         agendaItems.loadData {
             self.tableView.reloadData()
-            
+       
         }
-
+      
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        loadStarSign()
+        horoscopeDetail.getData {
+            DispatchQueue.main.async {
+                self.horoscopeLabel.text = "\(self.horoscopeDetail.horoscope)"
+            }
+        }
     }
     
     @IBAction func tapPressed(_ sender: UITapGestureRecognizer) {
@@ -95,35 +132,75 @@ class HomeViewController: UIViewController, ListTableViewCellDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "FromCell" {
+        
+        switch segue.identifier {
+        case "FromCell":
             let destination = segue.destination as! ToDoDetailTableViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow!
             destination.toDoItem = agendaItems.agendaArray[selectedIndexPath.row]
-//            destination.toDoItem.time = agendaItems.agendaArray[selectedIndexPath.row].time
+            
+//        case "NewUser":
+//            let destination = segue.destination as! OnboardingViewController
+//            destination.horoscopeUser = HoroscopeDetail(starSign: "", name: "")
+            
+        case "HoroscopeDetail":
+            let destination = segue.destination as! HoroscopeDetailViewController
+            destination.horoscope = horoscopeLabel.text!
+        default:
+            if let selectedIndexPath = tableView.indexPathForSelectedRow { tableView.deselectRow(at: selectedIndexPath, animated: true)}
             
         }
-        else { if let selectedIndexPath = tableView.indexPathForSelectedRow { tableView.deselectRow(at: selectedIndexPath, animated: true)}}
+        
     }
     
     @IBAction func unwindFromDetail(segue: UIStoryboardSegue) {
+    
         let source = segue.source as! ToDoDetailTableViewController
         if let selectedIndexPath = tableView.indexPathForSelectedRow{ agendaItems.agendaArray[selectedIndexPath.row] = source.toDoItem
+           
+            agendaItems.saveData()
             tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
-            
         }
         else {
+            
+        
+
             let newIndexPath = IndexPath(row: agendaItems.agendaArray.count, section: 0
             )
+            agendaItems.saveData()
             agendaItems.agendaArray.append(source.toDoItem)
             tableView.insertRows(at: [newIndexPath], with: .bottom)
             tableView.scrollToRow(at: newIndexPath, at: .bottom, animated: true)
             
+            
         }
         agendaItems.saveData()
-       
+        print("AITEMS: \(agendaItems.agendaArray)")
+        
     }
     
+   
     
+    func loadStarSign() {
+        guard let starSignEncoded = UserDefaults.standard.value(forKey: "starSign") as? Data else {
+            print("error: could not load from starSign, but this is fine if first time app is run")
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
+            let navigationController = UINavigationController(rootViewController: vc)
+            self.present(navigationController, animated: true, completion: nil)
+            
+            
+            return
+        }
+        let decoder = JSONDecoder()
+        if let starSign = try? decoder.decode(String.self, from: starSignEncoded) as! String { self.starSign = starSign
+            
+        }
+        else {
+            print("error coudlnt decode data read from user defaults")
+        }
+       
+        
+    }
     
 }
 
@@ -139,16 +216,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ListTableViewCell
         cell.delegate = self
-
+        
         cell.toDoItem = agendaItems.agendaArray[indexPath.row]
- 
+//        cell.toDoItem = todayAgendaArray.agendaArray[indexPath.row]
+        
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 8
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return agendaItems.agendaArray.count    }
+        return agendaItems.agendaArray.count
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
@@ -166,6 +245,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             addButton.isHidden = false
             addButton.isEnabled = true
         }
+    
         agendaItems.saveData()
     }
     
@@ -220,7 +300,7 @@ extension HomeViewController: CLLocationManagerDelegate {
         let currentLocation = locations.last ?? CLLocation()
         print("current location is \(currentLocation)")
         print("❤️\(CLLocation())")
-       
+        
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(currentLocation) { placemarks, error in
             var locationName = ""
@@ -230,12 +310,7 @@ extension HomeViewController: CLLocationManagerDelegate {
             } else {
                 locationName = "Could not find Location"
             }
-//            let pageViewController = UIApplication.shared.windows.first!.rootViewController as! PageViewController
-//            pageViewController.weatherLocations[self.locationIndex].latitude = currentLocation.coordinate.latitude
-//            pageViewController.weatherLocations[self.locationIndex].longitude = currentLocation.coordinate.latitude
-//            pageViewController.weatherLocations[self.locationIndex].name = locationName
-//            print("using the extension for CL")
-//            self.updateUserInterface()
+            
         }
         
         
