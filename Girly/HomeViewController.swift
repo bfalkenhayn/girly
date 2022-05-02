@@ -49,10 +49,7 @@ class HomeViewController: UIViewController, ListTableViewCellDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if self.agendaItems.agendaArray.count != 0 {
-            self.addButton.isHidden = true
-            self.addButton.isEnabled = false
-        }
+       updateUserInterface()
         getLocation()
         weatherDetail = WeatherDetail(name: "current locatiton", latitude: locationManager.location?.coordinate.latitude ?? 0.0, longitude: locationManager.location?.coordinate.latitude ?? 0.0)
         weatherLabel.text = ""
@@ -68,6 +65,12 @@ class HomeViewController: UIViewController, ListTableViewCellDelegate {
         
     }
     
+    func updateUserInterface() {
+        if self.agendaItems.agendaArray.count != 0 {
+            self.addButton.isHidden = true
+            self.addButton.isEnabled = false
+        }
+    }
     
     override func viewDidLoad() {
    
@@ -107,7 +110,9 @@ class HomeViewController: UIViewController, ListTableViewCellDelegate {
         }
         
         agendaItems.loadData {
+            
             self.tableView.reloadData()
+            self.updateUserInterface()
        
         }
       
@@ -162,9 +167,6 @@ class HomeViewController: UIViewController, ListTableViewCellDelegate {
             tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
         }
         else {
-            
-        
-
             let newIndexPath = IndexPath(row: agendaItems.agendaArray.count, section: 0
             )
             agendaItems.saveData()
@@ -175,7 +177,7 @@ class HomeViewController: UIViewController, ListTableViewCellDelegate {
             
         }
         agendaItems.saveData()
-        print("AITEMS: \(agendaItems.agendaArray)")
+        self.updateUserInterface()
         
     }
     
@@ -298,8 +300,7 @@ extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //TODO: deal with change in location
         let currentLocation = locations.last ?? CLLocation()
-        print("current location is \(currentLocation)")
-        print("❤️\(CLLocation())")
+        
         
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(currentLocation) { placemarks, error in

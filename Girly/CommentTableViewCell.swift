@@ -18,7 +18,7 @@ class CommentTableViewCell: UITableViewCell {
     var comment:Comment! {
         didSet {
 
-            print("comment is \(comment.content)")
+            
             commentLabel.text = comment.content
            }
     }

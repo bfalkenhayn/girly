@@ -100,8 +100,10 @@ class JournalViewController: UIViewController, UITextViewDelegate {
             textView.isEditable = false
             shareButton.isHidden = true
             promptButton.alpha = 0
-
+            
         }
+        
+       
        
        
     }
@@ -116,8 +118,7 @@ class JournalViewController: UIViewController, UITextViewDelegate {
 
             updateFromUserInterface()
 
-            print("content is \(content)")
-            print("prompt is \(prompt)")
+           
             let destination = segue.destination as! NewPostViewController
             destination.cancelButton.customView?.alpha = 0
 
@@ -136,11 +137,9 @@ class JournalViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func promptButtonPressed(_ sender: Any) {
         
-        print("prompt Label Pressed")
-        promptButton.isHidden = true
-        
         promptLabel.text = prompts.promptArray[randomNumber(count: prompts.promptArray.count)]
         promptDicitonary[dateLabel.text!] = promptLabel.text
+        updateUserInterface()
        savePromptData()
     }
     
@@ -150,7 +149,7 @@ class JournalViewController: UIViewController, UITextViewDelegate {
     
     
     func saveData() {
-        print("save data functions")
+        
       let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
       let documentURL = directoryURL.appendingPathComponent("journal").appendingPathExtension("json")
       let jsonEncoder = JSONEncoder()
@@ -173,7 +172,7 @@ class JournalViewController: UIViewController, UITextViewDelegate {
            }
         catch {print("error in loading data")
     }
-        print("load data")
+       
         completed()
         
         
@@ -181,7 +180,7 @@ class JournalViewController: UIViewController, UITextViewDelegate {
     
     
     func savePromptData() {
-        print("save data functions")
+        
       let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
       let documentURL = directoryURL.appendingPathComponent("prompt").appendingPathExtension("json")
       let jsonEncoder = JSONEncoder()
@@ -204,7 +203,7 @@ class JournalViewController: UIViewController, UITextViewDelegate {
            }
         catch {print("error in loading data")
     }
-        print("load data")
+        
         completed()
         
         

@@ -13,10 +13,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Girly needs to access the device location to display the local weather</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Girly needs to access the device location to display the local weather</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

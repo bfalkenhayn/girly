@@ -56,7 +56,7 @@ class OnboardingViewController: UIViewController {
     }
     @IBAction func signSelected(_ sender: UIButton) {
         var signNumber = sender.tag
-        print("sign selected")
+        
         
         
         switch signNumber {
